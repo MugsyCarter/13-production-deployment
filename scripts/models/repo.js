@@ -10,7 +10,10 @@
       url: '/github/users/codefellows-portland-301d6/repos' +
           '?per_page=10&sort=updated',
       type: 'GET',
-      sucess: callback()
+      sucess: function(data, status, xhr){
+        reposObj.allRepos = data;
+        callback();
+      },
     });
   };
 
