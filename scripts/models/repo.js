@@ -4,13 +4,12 @@
   reposObj.allRepos = [];
 
   reposObj.requestRepos = function(callback) {
-    // DONE: TODO: refactor this request into an $.ajax call
-
+    // DONE: refactor this request into an $.ajax call
     $.ajax({
       url: '/github/users/codefellows-portland-301d6/repos' +
           '?per_page=10&sort=updated',
       type: 'GET',
-      sucess: function(data, status, xhr){
+      success: function(data, status, xhr) {
         reposObj.allRepos = data;
         callback();
       },
